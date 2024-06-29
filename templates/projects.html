@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Data Science Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_projects.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.project');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.dataset.filter;
+
+                    projects.forEach(project => {
+                        if (filter === 'all' || project.classList.contains(filter)) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Data Science and AI Projects</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/blogs">Blogs</a>
+            <a href="#" class="nav-link active">Projects</a>
+            
+           
+        </nav>
+    </header>
+    <main>
+        <section class="filter-section">
+            <h2>Filter Projects</h2>
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-filter="nlp">NLP</button>
+            <button class="filter-btn" data-filter="genai">Generative AI</button>
+        </section>
+        <section>
+            <div class="project ml">
+                <h3>Project 1: Machine Learning Model for Predicting House Prices</h3>
+                <p>Description: This project involves building a machine learning model to predict house prices based on various features.</p>
+                <p>Technologies: Python, Scikit-Learn</p>
+                <a href="https://github.com/yourusername/project1">GitHub Repository</a>
+            </div>
+            <div class="project nlp">
+                <h3>Project 2: Sentiment Analysis on Social Media Data</h3>
+                <p>Description: This project involves performing sentiment analysis on social media data to gauge public opinion.</p>
+                <p>Technologies: Python, NLTK</p>
+                <a href="https://github.com/yourusername/project2">GitHub Repository</a>
+            </div>
+            <div class="project genai">
+                <h3>Project 3: Generative AI Project</h3>
+                <p>Description: This project involves building a generative AI model to create new content based on existing data.</p>
+                <p>Technologies: Python, NLTK, GenAI</p>
+                <a href="https://github.com/yourusername/project3">GitHub Repository</a>
+            </div>
+            <div class="project test1">
+                <h3>Project 4: Another Project</h3>
+                <p>Description: This project involves building a generative AI model to create new content based on existing data.</p>
+                <p>Technologies: Python, NLTK, GenAI</p>
+                <a href="https://github.com/yourusername/project3">GitHub Repository</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Shreya Batra</p>
+    </footer>
+</body>
+</html>

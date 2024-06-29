@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Data Science Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_blog.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Blogs</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="#" class="nav-link active">Blogs</a>
+            <a href="/projects">Projects</a>
+           
+            
+        </nav>
+    </header>
+    <main>
+        <section class="blogs-section">
+            <h2>Latest Articles</h2>
+            <article class="blog-post">
+                <h3>Getting Started with Machine Learning</h3>
+                <p>Published on: June 28, 2024</p>
+                <p>This article introduces the basics of machine learning and provides a step-by-step guide to getting started.</p>
+                <a href="/blog/1" class="btn">Read more</a>
+            </article>
+            <article class="blog-post">
+                <h3>5 Tips for Effective Data Visualization</h3>
+                <p>Published on: July 5, 2024</p>
+                <p>In this article, we explore five essential tips for creating effective and impactful data visualizations.</p>
+                <a href="/blog/2" class="btn">Read more</a>
+            </article>
+            <!-- Add more articles as needed -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Shreya Batra</p>
+    </footer>
+</body>
+</html>
