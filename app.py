@@ -16,8 +16,12 @@ def blog():
     return render_template('blogs.html')
 
 @app.route('/about')
-def about():
+def course():
     return render_template('about.html')
+
+@app.route('/courses')
+def about():
+    return render_template('course.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,104 +2,139 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100%; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column; /* Flexbox for proper alignment */
     font-family: 'Roboto', sans-serif;
-    background: #f9f9f9; /* Light background color */
-    color: #333; /* Dark text color for better contrast */
+    background: #f4f7f6; /* Softer light background (same as blogs page) */
+    color: #333; /* Darker text color for better contrast */
+    line-height: 1.6;
 }
 
 header {
-    background-color: #2b5e71; /* Lighter blue header color */
+    background-color: #404155;
     color: #fff;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    height: 74px; /* Match height of blogs page */
+    padding: 0 2rem; /* Match horizontal padding of blogs page */
+    font-size: 1.2rem; /* Match font size of blogs page */
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; /* Center content vertically */
 }
 
 header nav a {
     color: #fff;
-    margin: 0 1rem;
+    margin: 0 1.5rem; /* Match margin of blogs page */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #cecefd;
+    text-decoration: underline;
 }
 
 main {
-    padding: 2rem 1rem;
+    flex: 1; /* Allows main content to grow and push footer down */
+    padding: 3rem 1.5rem; /* Match padding of blogs page */
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .filter-section {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem; /* Adjusted to match blogs page */
 }
 
 .filter-section h2 {
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 2rem; /* Match header size of blogs page */
+    font-weight: bold; /* Match font weight */
+    color: #404155; /* Match color */
+    margin-bottom: 2rem; /* Match margin */
+    text-align: center; /* Center align */
 }
 
 .filter-btn {
-    padding: 5px 15px;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem; /* Match button padding of blogs page */
+    font-size: 1rem; /* Match font size */
     cursor: pointer;
-    background-color: #2b5e71; /* Lighter blue button color */
+    background-color: #404155; /* Match button color */
     color: white;
     border: none;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px; /* Match border radius */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .filter-btn:hover {
-    background-color: #5ba7c9; /* Darker blue on hover */
+    background-color: #7a7da0; /* Match hover color */
+    transform: translateY(-3px); /* Match transform on hover */
 }
 
+/* Ensure padding, margins, and width are consistent with .blog-post */
 .project {
     background: #fff;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+    padding: 2rem; /* Match padding of .blog-post */
+    margin: 2rem 0; /* Match margin of .blog-post */
+    border-radius: 12px; /* Match border radius of .blog-post */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Match box shadow of .blog-post */
+    border-left: 5px solid #cecefd; /* Match border left color of .blog-post */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 700px; /* Set width */
+    /* Height will adjust automatically based on content */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Match hover effect of .blog-post */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Match box shadow on hover of .blog-post */
 }
 
 .project h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem; /* Match title size of .blog-post */
     margin-bottom: 1rem;
+    color: #404155; /* Match text color of .blog-post */
 }
 
 .project p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    font-size: 1.1rem; /* Match font size of .blog-post */
+    color: #555; /* Match text color of .blog-post */
+    margin-bottom: 1.5rem;
 }
 
 .project a {
-    color: #488aa2;
+    color: #6b6d8d; /* Match link color of .blog-post */
     text-decoration: none;
     font-weight: bold;
 }
 
 .project a:hover {
-    color: #5ba7c9;
+    color: #cecefd; /* Match hover color of .blog-post */
     text-decoration: underline;
 }
 
 footer {
-    background-color: #2b5e71; /* Lighter blue footer color */
+    background-color: #404155;
     color: #fff;
     text-align: center;
-    padding: 0.5rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-family: 'Times New Roman', Times, serif;
+    padding: 1rem; /* Match padding of blogs page */
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Match box shadow */
+    margin-top: auto; /* Ensure footer is pushed to the bottom */
 }
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #cecefd; /* Match text color */
+}
+
 .nav-link.active {
-    /* Highlight color */
-   color: #6deefc; /* Text color for active link */
- }
+    color: #cecefd; /* Active link color */
+}

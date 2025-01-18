@@ -13,9 +13,13 @@ body, html {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('/static/img2.jpg'); /* Replace with your image path */
+    background: linear-gradient(
+        to bottom right, 
+        #f4f7f6,         /* Softer Primary Background */
+        #7a7da0 60%,     /* A more prominent accent color */
+        #404155          /* Add a darker tone for subtle depth */
+    );
     background-size: cover;
-    background-position: center;
     text-align: center;
     color: #fff;
 }
@@ -26,7 +30,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay with lower opacity */
     z-index: 1;
 }
 
@@ -41,24 +45,24 @@ header {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeInUp 1.5s ease-in-out; /* New animation for smoother appearance */
 }
 
 .intro h1 {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 900; /* Make it more prominent */
     margin: 0.5rem 0;
 }
 
 .intro h3 {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400; /* Slightly thicker for better readability */
     margin: 0.5rem 0;
 }
 
 nav {
     margin-top: 20px;
-    animation: fadeIn 2s ease-in-out ;
+    animation: fadeIn 2s ease-in-out;
 }
 
 nav a {
@@ -69,24 +73,51 @@ nav a {
     font-size: 1.2rem;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Adds hover effects */
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px); /* Adds a slight lift on hover */
 }
 
 footer {
-    background-color: #333;
+    background-color: #404155;
     color: #fff;
     text-align: center;
-    padding: 0.3rem;
+    padding: 0.5rem;
     position: fixed;
     bottom: 0;
     width: 100%;
+    border-top: 2px solid #7a7da0; /* Adds a clean separation */
 }
 
+footer p {
+    color: #cecefd;
+}
+
+/* Keyframes for smooth fade-in animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro h3 {
+        font-size: 1.2rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
 }

@@ -21,7 +21,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex; /* Add this to center content vertically */
     align-items: center; /* Center content vertically */
-
 }
 
 header nav a {
@@ -37,6 +36,7 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+/* Main section */
 main {
     flex: 1; /* Allows main content to grow and push footer down */
     padding: 3rem 1.5rem;
@@ -47,47 +47,64 @@ main {
     margin: 0 auto;
 }
 
-.blogs-section {
-    max-width: 700px;
-    width: 100%;
-}
-
-.blogs-section h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #404155;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.blog-post {
+/* General card styling for courses, certifications, and about sections */
+.courses-card, .certifications-card, .about-card {
     background: #fff;
     padding: 2rem;
     margin: 2rem 0;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #cecefd;
+    border-left: 5px solid #cecefd; /* Add border like the about card */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 700px; /* Match the max width of the about section */
+    text-align: center; /* Center text */
 }
 
-.blog-post:hover {
+.courses-card:hover, .certifications-card:hover, .about-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Add hover effect */
 }
 
-.blog-post h3 {
+.courses-card h2, .certifications-card h2, .about-card h2 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
     color: #404155;
+    text-align: center;
 }
 
-.blog-post p {
+.courses-card ul, .certifications-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.courses-card li, .certifications-card li {
     font-size: 1.1rem;
     color: #555;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.blog-post .btn {
+.courses-card strong, .certifications-card strong {
+    color: #6b6d8d;
+    
+}
+.courses-card br, .certifications-card br {
+    color: #404155;
+    text-align: justify;
+}
+
+/* Profile Picture styling for About section */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem; /* Center the image and add space below */
+    display: block; /* Behaves like a block-level element */
+}
+
+/* Resume Button */
+.resume-card .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background-color: #404155;
@@ -97,7 +114,7 @@ main {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.blog-post .btn:hover {
+.resume-card .btn:hover {
     background-color: #7a7da0;
     transform: translateY(-3px);
 }
